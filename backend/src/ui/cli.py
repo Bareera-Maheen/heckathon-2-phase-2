@@ -1,6 +1,6 @@
 import sys
 from typing import List
-from src.models.task import Task
+from src.models.task import Task, TaskStatus
 
 def print_welcome():
     print("Welcome to Todo CLI!")
@@ -32,7 +32,7 @@ def get_input(prompt: str = "> ") -> str:
         return "7" # Default to exit on EOF
 
 def format_task(task: Task) -> str:
-    status_mark = "x" if task.status.name == "COMPLETED" else " "
+    status_mark = "x" if task.status == TaskStatus.COMPLETED else " "
     return f"[{status_mark}] {task.id}: {task.description}"
 
 def print_tasks(tasks: List[Task]):

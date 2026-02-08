@@ -43,3 +43,9 @@ dmypy.json
 .vscode/
 *.swp
 *.swo
+
+# Database
+*.db
+
+# Node
+node_modules/
